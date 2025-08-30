@@ -6,22 +6,16 @@ import { useState } from 'react'
 import { fetchUser, updateProfile } from '@/actions/useractions'
 
 const page = () => {
-    const {data : session, update} = useSession()
+    const {data : session, status, update} = useSession()
     const router = useRouter()
     const [formValues, setFormValues] = useState({})
     console.log(formValues)
     
     useEffect(() => {
-
-        if (!session) {
-            router.push('/login')
-        }
-
-        else {
-            getData()
-        }
-
-    }, [session, router])
+        if (status === "loading") return; // wait until NextAuth resolves
+        if (!session) router.push("/login");
+        else getData();
+    }, [session, status, router]);
 
     const getData = async () => {
         let user = await fetchUser(session.user.name)
@@ -42,7 +36,7 @@ const page = () => {
         <div className="container w-[55%] flex flex-col justify-center items-center mx-auto pt-10 pb-20 max-[500px]:w-[90%]">
             <h3 className='text-white text-[26px] font-bold'>Welcome to your Dashboard</h3>
 
-            <form action={handleSubmit} className='flex flex-col w-[100%] gap-y-2'>
+            <form onSubmit={(e) => { e.preventDefault(); handleSubmit(formValues); }} className='flex flex-col w-[100%] gap-y-2'>
                 <div >
                     <p>Name</p>
                     <input value={formValues.name ? formValues.name : ''} onChange={handleChange} className='p-1.5 bg-gray-800 mt-1.5 rounded-[8px] w-[100%]' required={true} type="text" id='name' name='name' />
