@@ -59,7 +59,7 @@ const Navbar = () => {
 
           <img src="/search.png" alt="search" className='min-[740px]:hidden' onClick={toggleSearch} />
 
-          {showSearch && <form action={handleSubmit} className='h-[100%] absolute top-16 right-10 flex min-[740]:hidden justify-center items-center '>
+          {showSearch && <form action={handleSubmit} className='h-[100%] absolute top-16 right-4 flex min-[740]:hidden justify-center items-center '>
             <input name='searchusername' type="text" className='border-none bg-white rounded-tl-2xl rounded-bl-2xl p-1 outline-none placeholder:text-gray-500 pl-3 ' placeholder='Search creators' />
             <button className='bg-purple-600 h-[100%] p-1 text-white font-bold rounded-tr-2xl rounded-br-2xl px-2 hover:bg-purple-800 cursor-pointer'>search</button>
           </form>}
