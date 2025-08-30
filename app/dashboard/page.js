@@ -32,7 +32,7 @@ const Page = () => {
     const handleSubmit = async (data) => {
         update()
         await updateProfile(data, session.user.name)
-        
+
         toast.success('Profile Updated...')
     }
 
@@ -40,16 +40,14 @@ const Page = () => {
         <div>
             <ToastContainer
                 position="top-right"
-                autoClose={5000}
+                autoClose={1000}
+                hautoClose={1000}      // 3 seconds
                 hideProgressBar={false}
                 newestOnTop={false}
-                closeOnClick={false}
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
+                closeOnClick
                 pauseOnHover
-                theme="light"
-                transition="Bounce"
+                draggable
+                theme='light'
             />
 
             <div className="container w-[55%] flex flex-col justify-center items-center mx-auto pt-10 pb-20 max-[500px]:w-[90%]">
