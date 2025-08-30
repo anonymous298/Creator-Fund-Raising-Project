@@ -3,8 +3,8 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import { searchCreator } from '@/actions/useractions'
-import { useRouter } from 'next/navigation'
-import NotFound from '@/app/not-found'
+import { notFound, useRouter } from 'next/navigation'
+// import { notFound } from 'next/navigation'
 // import { useState } from 'react'
 // import { useRouter } from 'next/navigation'
 // import { searchCreator } from '@/actions/useractions'
@@ -26,11 +26,11 @@ const Navbar = () => {
       console.log(username)
   
       if (username) {
-        router.push(username.username)
+        router.push(`/user/${username.username}`)
       }
   
       else {
-        router.push('/usernotfound')
+        return router.push('/notfounduser')
       }
 
     }
@@ -77,7 +77,7 @@ const Navbar = () => {
                     <Link href="/dashboard" onClick={() => setShowDropdown(false)} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
                   </li>
                   <li>
-                    <Link href={`/${session.user.name}`} onClick={() => setShowDropdown(false)} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Your Page</Link>
+                    <Link href={`/user/${session.user.name}`} onClick={() => setShowDropdown(false)} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Your Page</Link>
                   </li>
                   <li>
                     <button onClick={() => signOut()} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white w-[100%] text-start cursor-pointer">Sign out</button>
