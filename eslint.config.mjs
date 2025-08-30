@@ -20,6 +20,11 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    rules: {
+      "@next/next/no-img-element": "off", // 👈 disable <img> lint error
+    },
+  },
 ];
 
 export default eslintConfig;
