@@ -32,6 +32,7 @@ const Page = () => {
     const handleSubmit = async (data) => {
         update()
         await updateProfile(data, session.user.name)
+        // console.log(value)
 
         toast.success('Profile Updated...')
     }
