@@ -5,7 +5,7 @@ import React from 'react'
 // import { useEffect } from 'react'
 import UserPage from '@/components/UserPage'
 
-const page = async ({params}) => {
+const Page = async ({params}) => {
     const {username} = await params
     // const {data : session} = useSession();
     // const router = useRouter()
@@ -25,4 +25,4 @@ const page = async ({params}) => {
   
 }
 
-export default page
+export default Page

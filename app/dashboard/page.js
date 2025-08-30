@@ -5,7 +5,7 @@ import { useSession, signIn, signOut } from 'next-auth/react'
 import { useState } from 'react'
 import { fetchUser, updateProfile } from '@/actions/useractions'
 
-const page = () => {
+const Page = () => {
     const {data : session, status, update} = useSession()
     const router = useRouter()
     const [formValues, setFormValues] = useState({})
@@ -71,4 +71,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
