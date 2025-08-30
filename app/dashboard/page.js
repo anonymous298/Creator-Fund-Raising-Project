@@ -49,7 +49,7 @@ const Page = () => {
                 draggable
                 pauseOnHover
                 theme="light"
-                transition={Bounce}
+                // transition={Bounce}
             />
 
             <div className="container w-[55%] flex flex-col justify-center items-center mx-auto pt-10 pb-20 max-[500px]:w-[90%]">
