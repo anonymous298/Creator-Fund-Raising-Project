@@ -19,16 +19,22 @@ const Navbar = () => {
   // console.log(searchCreator)
 
   const handleSubmit = async (data) => {
-    const username = await searchCreator(data);
-    console.log(username)
 
-    if (username) {
-      router.push(username.username)
-    }
+    if (data.searchusername !== '') {
 
-    else {
-      router.push('/usernotfound')
+      const username = await searchCreator(data);
+      console.log(username)
+  
+      if (username) {
+        router.push(username.username)
+      }
+  
+      else {
+        router.push('/usernotfound')
+      }
+
     }
+    
 
     // !username && <NotFound />
   }
