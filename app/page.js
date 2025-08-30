@@ -17,7 +17,7 @@ export default function Home() {
             <button className='p-2 px-5 bg-purple-500 rounded-2xl text-white font-semibold hover:bg-purple-650 cursor-pointer shadow-purple-800 hover:shadow-sm transition-all'>Get Started</button>
           </Link>
 
-          <Link href={'/login'}>
+          <Link href={'/about'}>
             <button className='p-2 px-5 bg-purple-500 rounded-2xl text-white font-semibold hover:bg-purple-650 cursor-pointer shadow-purple-800 hover:shadow-sm transition-all'>Read More</button>
           </Link>
         </div>
@@ -28,7 +28,7 @@ export default function Home() {
 
         <div className="flex justify-center items-center flex-wrap gap-x-15 mt-15 gap-y-10">
           <div className="flex flex-col justify-center items-center w-[200px] gap-y-2">
-            <div className="rounded-full p-7 bg-gray-400 w-[120px]">
+            <div className="rounded-full p-7 bg-gray-400 w-[120px] hover:shadow-2xl shadow-gray-500  hover:transform hover:-translate-y-px transition-all">
               <img src="/group.gif" alt="gif" className="size-15" />
             </div>
             <p className="text-white text-[15px] font-semibold">Fan wants to help you</p>
@@ -36,7 +36,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col justify-center items-center w-[200px] gap-y-2">
-            <div className="rounded-full p-7 bg-gray-400 w-[120px]">
+            <div className="rounded-full p-7 bg-gray-400 w-[120px]  hover:shadow-2xl shadow-gray-500  hover:transform hover:-translate-y-px transition-all">
               <img src="/coin.gif" alt="gif" className="size-15" />
             </div>
             <p className="text-white text-[15px] font-semibold">Fan wants to help you</p>
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col justify-center items-center w-[200px] gap-y-2">
-            <div className="rounded-full p-7 bg-gray-400 w-[120px]">
+            <div className="rounded-full p-7 bg-gray-400 w-[120px]  hover:shadow-2xl shadow-gray-500 hover:transform hover:-translate-y-px transition-all">
               <img src="/man.gif" alt="gif" className="size-15" />
             </div>
             <p className="text-white text-[15px] font-semibold">Fan wants to help you</p>
