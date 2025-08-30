@@ -3,6 +3,7 @@ import React from 'react'
 // import { useRouter } from 'next/navigation'
 // import { useSession } from 'next-auth/react'
 // import { useEffect } from 'react'
+import UserPage from '@/components/UserPage'
 
 const page = async ({params}) => {
     const {username} = await params
@@ -17,11 +18,11 @@ const page = async ({params}) => {
 
     // }, [session, router])
 
-  return (
-    <div>
-      This is user {params.username}
-    </div>
-  )
+    return (
+        <UserPage username={username} />
+    )
+
+  
 }
 
 export default page

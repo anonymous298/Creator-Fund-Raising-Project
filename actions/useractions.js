@@ -1,6 +1,7 @@
 "use server"
 import connectDb from "@/db/connectDB";
 import User from "@/models/User";
+import NotFound from "@/app/not-found";
 
 export const fetchUser = async (username) => {
     await connectDb()
@@ -31,5 +32,25 @@ export const updateProfile = async (data, oldUsername) => {
     await User.updateOne({email : newData.email}, newData)
     // alert('Updated')
     console.log('updated')
+
+}
+
+export const searchCreator = async (data) => {
+    await connectDb()
+
+    let newData = Object.fromEntries(data)
+    // console.log(newData.searchusername)
+
+    let u = await User.findOne({username : newData.searchusername})
+
+    if (u) {
+
+        const user = u.toObject({flattenObjectIds : true})
+        return user
+    }
+
+    else {
+        return false
+    }
 
 }
