@@ -90,8 +90,3 @@ const Page = () => {
 }
 
 export default Page
-
-export const metadata = {
-  title: "Patreon - Dashboard",
-  description: "A Dashboard For Account Creation",
-};

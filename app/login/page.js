@@ -84,8 +84,3 @@ const page = () => {
 }
 
 export default page
-
-export const metadata = {
-  title: "Log In - Page",
-  description: "A Funding Website For Creators",
-};
