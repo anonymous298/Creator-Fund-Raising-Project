@@ -41,3 +41,8 @@ const Page = async ({params}) => {
 }
 
 export default Page
+
+export const metadata = {
+  title: "Patreon - Profile",
+  description: "A Funding Website For Creators",
+};
