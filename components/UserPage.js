@@ -91,3 +91,8 @@ const UserPage = ({username}) => {
 }
 
 export default UserPage
+
+export const metadata = {
+  title: "Patreon - Profile",
+  description: "A Funding Website For Creators",
+};
